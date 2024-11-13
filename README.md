@@ -68,13 +68,12 @@ response. Currently the package supports the following commands:
       - proteomics: `ds.format('proteomics')` returns a
         pandas or polars data frame with each row representing a gene
         and each column representing a sample.
-      - experiments: `ds.format('experiments', 'fit_auc')` returns a
-      matrix with drugs represented by rows and samples represneted by
-      columns the numeric values represent the measurement provided by
-      the second argument. 
+      - experiments: `ds.format('experiments', 'long',['fit_auc','fit_ec50'])` returns a data frame with the `improve_sample_id` and `improve_drug_id` columns and the columns provided by the third argument. If the second argument is `wide` then only one value will be accepted in the third argument, which is the value in a matrix with drugs represented by rows and samples represneted by columns the numeric values represented by the third arugment. 
       - combinations: `ds.format('combinations')` returns ???
-      - drugs: Not sure what to return here - just table? how about descriptors?
-      - samples: just return table?
+      - drug_structure: `ds.format('drug_structure')` 
+      - drugs: Return the entire drugs table for that dataset
+      - genes: Return the entire genes table for that datset
+      - samples: Retrun the entire samples table for that dataset
    4. `save`: saves the object to a file. 
 
 ## Additional documentation
