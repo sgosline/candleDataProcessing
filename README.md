@@ -27,9 +27,10 @@ The Python package is designed to facilitate the training and
 validating of computational models that predict drug
 response. Currently the package supports the following commands:
 
-1. `list`: Lists names of datasets to download. This depends on what
+1. `version`: The current version and build date of the package/data.
+2. `list`: Lists names of datasets to download. This depends on what
    datasets have been in the main build. 
-2. `download`: Downloads the dataset by name. Case insensitive, but
+3. `download`: Downloads the dataset by name. Case insensitive, but
    should contain full name of dataset returned from the `list` command. 
 2. `load`: This return a `dataset` object that houses all the
    data. This object has the following functions:
