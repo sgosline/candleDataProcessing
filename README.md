@@ -69,9 +69,9 @@ response. Currently the package supports the following commands:
       - proteomics: `ds.format('proteomics')` returns a
         pandas or polars data frame with each row representing a gene
         and each column representing a sample.
-      - experiments: `ds.format('experiments', 'long',['fit_auc','fit_ec50'])` returns a data frame with the `improve_sample_id` and `improve_drug_id` columns and the columns provided by the third argument. If the second argument is `wide` then only one value will be accepted in the third argument, which is the value in a matrix with drugs represented by rows and samples represneted by columns the numeric values represented by the third arugment. 
+      - experiments: `ds.format('experiments', '[long|wide]',['fit_auc','fit_ec50'])` returns a data frame with the `improve_sample_id` and `improve_drug_id` columns and the columns provided by the third argument. If the second argument is `wide` then only one value will be accepted in the third argument, which is the value in a matrix with drugs represented by rows and samples represneted by columns the numeric values represented by the third arugment. 
       - combinations: `ds.format('combinations')` returns ???
-      - drug_structure: `ds.format('drug_structure')` 
+      - drug_structure: `ds.format('drug_descriptor','[long|wide]',['SMILES','morgan','mordred'])` : If the 'descriptor_type' (third argument) is not provided, this returns the entire drug descriptor table. In either long or wide format. Otherwise returns just the descriptor requested.
       - drugs: Return the entire drugs table for that dataset
       - genes: Return the entire genes table for that datset
       - samples: Retrun the entire samples table for that dataset
